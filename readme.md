@@ -1,7 +1,7 @@
 # Project Description
 
-Projectr is a beautifully designed full-stack project manager app built for teams.
-The project roadmap is set in stages where we begin as a simple to-do list and gradually expand functionalities.
+Projectr is a beautifully designed full-stack project manager app built for teams. <br>
+The project roadmap is set in stages where we begin as a simple to-do list and gradually expand functionalities.<br>
 
 ## Roadmap
 
@@ -49,11 +49,11 @@ The project roadmap is set in stages where we begin as a simple to-do list and g
 
 ## endpoints
 
-/user/signin
-/user/signup
-
-/projects
-Shows all projects
-
-/projects/:id/
-Dedicated page for the selected project, showing more details
+/user/signin<br>
+/user/signup<br>
+<br>
+/projects<br>
+Shows all projects<br>
+<br>
+/projects/:id/<br>
+Dedicated page for the selected project, showing more details<br>
