@@ -1,7 +1,7 @@
 # Project Description
 
-Projectr is a beautifully designed full-stack project manager app built for teams.
-The project roadmap is set in stages where we begin as a simple to-do list and gradually expand functionalities.
+Projectr is a beautifully designed full-stack project manager app built for teams. <br>
+The project roadmap is set in stages where we begin as a simple to-do list and gradually expand functionalities.<br>
 
 ## Roadmap
 
@@ -15,45 +15,45 @@ The project roadmap is set in stages where we begin as a simple to-do list and g
 
 ## Data models
 
-### Project Model
+| Project Model  |
+| -------------- |
+| "project":     |
+| "username":    |
+| "status":      |
+| "guests":      |
+| "created_on":  |
+| "finished_on": |
+| "\_id":        |
 
-"project":
-"username":
-"status":
-"guests":
-"created_on":
-"finished_on":
-"\_id":
+| Task Model     |
+| -------------- |
+| "project":     |
+| "username":    |
+| "task":        |
+| "status":      |
+| "category":    |
+| "guests":      |
+| "priority":    |
+| "assigned_to": |
+| "department":  |
+| "created_on":  |
+| "finished_on": |
+| "\_id":        |
 
-### Task Model
-
-"project":
-"username":
-"task":
-"status":
-"category":
-"guests":
-"priority":
-"assigned_to":
-"department":
-"created_on":
-"finished_on":
-"\_id":
-
-### User Model
-
-"username":
-"password":
-"created_on":
-\_id:
+| User Model    |
+| ------------- |
+| "username":   |
+| "password":   |
+| "created_on": |
+| "\_id":       |
 
 ## endpoints
 
-/user/signin
-/user/signup
-
-/projects
-Shows all projects
-
-/projects/:id/
-Dedicated page for the selected project, showing more details
+/user/signin<br>
+/user/signup<br>
+<br>
+/projects<br>
+Shows all projects<br>
+<br>
+/projects/:id/<br>
+Dedicated page for the selected project, showing more details<br>
