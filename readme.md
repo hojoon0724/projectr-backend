@@ -1,55 +1,59 @@
-# projectr backend readme
+# Project Description
 
-## data models
+Projectr is a beautifully designed full-stack project manager app built for teams.
+The project roadmap is set in stages where we begin as a simple to-do list and gradually expand functionalities.
 
-**project**: 123456789
-task:
-status:
-home/office:
-**username**:
-guests:
-priority:
-assignee:
+## Roadmap
+
+| status | version | functionality         | notes                                                                         |
+| ------ | ------- | --------------------- | ----------------------------------------------------------------------------- |
+|        | v1      | simple to do list     | full CRUD with user auth                                                      |
+|        | v2      | subtasks              | entries become projects and projects can hold individual tasks                |
+|        | v3      | status                | projects and tasks can show statuses, side quest: click+drag kanban interface |
+|        | v4      | sharing               | users can now share projects with other users                                 |
+|        | v5      | priority & assignment | users can set priorities and assign tasks to other users                      |
+
+## Data models
+
+### Project Model
+
+"project":
+"username":
+"status":
+"guests":
+"created_on":
+"finished_on":
+"\_id":
+
+### Task Model
+
+"project":
+"username":
+"task":
+"status":
+"category":
+"guests":
+"priority":
+"assigned_to":
+"department":
+"created_on":
+"finished_on":
+"\_id":
+
+### User Model
+
+"username":
+"password":
+"created_on":
 \_id:
-department:
-created on:
-finished on:
-
-**username**:
-password:
-\_id: 987654321
-
-**project**:
-\_id: 123456789
 
 ## endpoints
 
-/user/signin… signup —> auth
-/projects —> list of the stuffs
+/user/signin
+/user/signup
 
-/projects/tasks —> subtasks (v2)
+/projects
+Shows all projects
 
-/tasks/:id
-/tasks/:owner
-
-## ERD diagram
-
-**project**: 123456789
-task:
-status:
-home/office:
-**username**:
-guests:
-priority:
-assignee:
-\_id:
-department:
-created on:
-finished on:
-
-**username**:
-password:
-\_id: 987654321
-
-**project**:
-\_id: 123456789
+/projects/:id/
+Dedicated page for the selected project, showing more details
