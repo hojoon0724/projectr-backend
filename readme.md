@@ -38,7 +38,7 @@ The project roadmap is set in stages where we begin as a simple to-do list and g
 | "created_on":  |                |               |
 | "finished_on": |                |               |
 | "deadline":    |                |               |
-| "\_id":        |                |               |
+| "\_id":        | "projectId":   |               |
 
 ## endpoints
 

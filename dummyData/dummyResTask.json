@@ -1,6 +1,7 @@
 [
   {
     "project": "UX Research",
+    "projectId": "65d6c4af7efcdfbbfba2b624",
     "username": "username",
     "task": "Complete user interviews for feature analysis",
     "status": "none",
@@ -14,6 +15,7 @@
   },
   {
     "project": "UX Research",
+    "projectId": "65d6c4af7efcdfbbfba2b624",
     "username": "username",
     "task": "Conduct usability testing on prototype",
     "status": "none",
@@ -27,6 +29,7 @@
   },
   {
     "project": "UX Research",
+    "projectId": "65d6c4af7efcdfbbfba2b624",
     "username": "username",
     "task": "Analyze user feedback and suggest improvements",
     "status": "none",
@@ -40,6 +43,7 @@
   },
   {
     "project": "UX Research",
+    "projectId": "65d6c4af7efcdfbbfba2b624",
     "username": "username",
     "task": "Create personas based on research findings",
     "status": "none",
@@ -53,6 +57,7 @@
   },
   {
     "project": "UX Research",
+    "projectId": "65d6c4af7efcdfbbfba2b624",
     "username": "username",
     "task": "Design and execute A/B testing for UI elements",
     "status": "none",
@@ -66,6 +71,7 @@
   },
   {
     "project": "UX Research",
+    "projectId": "65d6c4af7efcdfbbfba2b624",
     "username": "username",
     "task": "Prepare research report for stakeholders",
     "status": "none",
@@ -79,6 +85,7 @@
   },
   {
     "project": "UX Research",
+    "projectId": "65d6c4af7efcdfbbfba2b624",
     "username": "username",
     "task": "Collaborate with design team to implement findings",
     "status": "none",
@@ -92,6 +99,7 @@
   },
   {
     "project": "UX Research",
+    "projectId": "65d6c4af7efcdfbbfba2b624",
     "username": "username",
     "task": "Present research insights to the development team",
     "status": "none",
@@ -105,6 +113,7 @@
   },
   {
     "project": "Database Restructure",
+    "projectId": "65d6c4af7efcdfbbfba2b625",
     "username": "username",
     "task": "Review current database schema",
     "status": "none",
@@ -118,6 +127,7 @@
   },
   {
     "project": "Database Restructure",
+    "projectId": "65d6c4af7efcdfbbfba2b625",
     "username": "username",
     "task": "Identify data normalization opportunities",
     "status": "none",
@@ -131,6 +141,7 @@
   },
   {
     "project": "Database Restructure",
+    "projectId": "65d6c4af7efcdfbbfba2b625",
     "username": "username",
     "task": "Plan migration strategy for existing data",
     "status": "none",
@@ -144,6 +155,7 @@
   },
   {
     "project": "Database Restructure",
+    "projectId": "65d6c4af7efcdfbbfba2b625",
     "username": "username",
     "task": "Coordinate with development team for implementation",
     "status": "none",
@@ -157,6 +169,7 @@
   },
   {
     "project": "Database Restructure",
+    "projectId": "65d6c4af7efcdfbbfba2b625",
     "username": "username",
     "task": "Test and validate new database structure",
     "status": "none",
@@ -170,6 +183,7 @@
   },
   {
     "project": "Database Restructure",
+    "projectId": "65d6c4af7efcdfbbfba2b625",
     "username": "username",
     "task": "Update documentation for database changes",
     "status": "none",
@@ -183,6 +197,7 @@
   },
   {
     "project": "Database Restructure",
+    "projectId": "65d6c4af7efcdfbbfba2b625",
     "username": "username",
     "task": "Perform backup before database migration",
     "status": "none",
@@ -196,6 +211,7 @@
   },
   {
     "project": "Database Restructure",
+    "projectId": "65d6c4af7efcdfbbfba2b625",
     "username": "username",
     "task": "Communicate changes to stakeholders",
     "status": "none",

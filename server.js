@@ -82,6 +82,23 @@ app.get('/projects/tasks/seed', async (req, res) => {
     res.send('there was an error yo')
   }
 })
+
+app.get('/projects', async (req, res) => {
+  try {
+    res.json(await Project.find({}))
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+app.get('/projects/tasks', async (req, res) => {
+  try {
+    res.json(await Task.find({ project: 'Database Restructure' }))
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
 // --------
 
 // -----------------------------------------------------
