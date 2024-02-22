@@ -7,6 +7,7 @@ const projectSchema = new Schema({
   status: { type: String },
   guests: [{ type: String }],
   created_on: { type: Date },
+  deadline: { type: Date },
   finished_on: { type: Date }
 })
 
