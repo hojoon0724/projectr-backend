@@ -1,8 +1,7 @@
 // -----------------------------------------------------
 // Dependencies
 // -----------------------------------------------------
-const express = require('express')
-const project = require('../models/Project')
+const Project = require('../models/Project')
 const router = express.Router()
 
 // -----------------------------------------------------

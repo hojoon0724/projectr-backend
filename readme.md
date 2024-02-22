@@ -15,37 +15,28 @@ The project roadmap is set in stages where we begin as a simple to-do list and g
 
 ## Data models
 
-| Project Model  |
-| -------------- |
-| "project":     |
-| "username":    |
-| "status":      |
-| "guests":      |
-| "created_on":  |
-| "finished_on": |
-| "\_id":        |
-
-| Task Model     |
-| -------------- |
-| "project":     |
-| "username":    |
-| "task":        |
-| "status":      |
-| "category":    |
-| "guests":      |
-| "priority":    |
-| "assigned_to": |
-| "department":  |
-| "created_on":  |
-| "finished_on": |
-| "\_id":        |
-
-| User Model    |
-| ------------- |
-| "username":   |
-| "password":   |
-| "created_on": |
-| "\_id":       |
+| Project Model  | Task Model     | User Model    |
+| -------------- | -------------- | ------------- |
+| "project":     | "project":     |               |
+| "username":    | "username":    | "username":   |
+|                |                | "password":   |
+|                |                | "created_on": |
+|                |                | "\_id":       |
+|                | "task":        |               |
+|                | "status":      |               |
+|                | "category":    |               |
+|                | "guests":      |               |
+|                | "priority":    |               |
+|                | "assigned_to": |               |
+|                | "department":  |               |
+|                | "created_on":  |               |
+|                | "finished_on": |               |
+|                | "\_id":        |               |
+| "status":      |                |               |
+| "guests":      |                |               |
+| "created_on":  |                |               |
+| "finished_on": |                |               |
+| "\_id":        |                |               |
 
 ## endpoints
 
