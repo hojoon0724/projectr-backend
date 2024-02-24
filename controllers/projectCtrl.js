@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/:id', async (req, res) => {
-  console.dir(req.params.projectId)
+  console.dir(req.params.id)
   try {
     const tasks = await Task.find({ projectId: req.params.id })
     res.json(tasks)
