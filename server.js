@@ -8,6 +8,14 @@ const session = require('express-session')
 const projectCtrl = require('./controllers/projectCtrl')
 const userCtrl = require('./controllers/userCtrl')
 
+// test data
+const seedProject = require('./dummyData/dummyResProject.json')
+const seedTask = require('./dummyData/dummyResTask.json')
+const seedUser = require('./dummyData/dummyResUser.json')
+const Project = require('./models/Project')
+const Task = require('./models/Task')
+const User = require('./models/User')
+
 // -----------------------------------------------------
 // Application Object
 // -----------------------------------------------------
@@ -35,21 +43,79 @@ app.use(
 // -----------------------------------------------------
 // Routes INDUCESS
 // -----------------------------------------------------
-app.use('/projects', projectCtrl)
-app.use('/user', userCtrl)
+// app.use('/projects', projectCtrl)
+// app.use('/user', userCtrl)
+
+// test seed routes
+app.get('/projects/seed', async (req, res) => {
+  try {
+    const dummyData = seedProject
+    await Project.deleteMany({})
+    const projects = await Project.create(dummyData)
+    res.json(projects)
+  } catch (error) {
+    console.log(error.message)
+    res.send('there was an error yo')
+  }
+})
+
+app.get('/users/seed', async (req, res) => {
+  try {
+    const dummyData = seedUser
+    await User.deleteMany({})
+    const users = await User.create(dummyData)
+    res.json(users)
+  } catch (error) {
+    console.log(error.message)
+    res.send('there was an error yo')
+  }
+})
+
+app.get('/projects/tasks/seed', async (req, res) => {
+  try {
+    const dummyData = seedTask
+    await Task.deleteMany({})
+    const tasks = await Task.create(dummyData)
+    res.json(tasks)
+  } catch (error) {
+    console.log(error.message)
+    res.send('there was an error yo')
+  }
+})
+
+app.get('/projects', async (req, res) => {
+  try {
+    res.json(await Project.find({}))
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+app.get('/projects/tasks', async (req, res) => {
+  try {
+    res.json(await Task.find({ project: 'Database Restructure' }))
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+// --------
 
 // -----------------------------------------------------
 // GET requests
 // -----------------------------------------------------
-app.get('/', (req, res) => {
-  const username = req.session.username
-  if (req.session.loggedIn) {
-    res.redirect('/projects')
-  } else {
+app.get(
+  '/',
+  (req, res) => {
+    // const username = req.session.username
+    // if (req.session.loggedIn) {
+    // res.redirect('/projects')
+    // } else {
     res.send('not logged in, but ok')
     // res.render('landing.ejs', { username })
   }
-})
+  // }
+)
 
 // -----------------------------------------------------
 // Listener

@@ -31,12 +31,14 @@ The project roadmap is set in stages where we begin as a simple to-do list and g
 |                | "department":  |               |
 |                | "created_on":  |               |
 |                | "finished_on": |               |
+|                | "deadline":    |               |
 |                | "\_id":        |               |
 | "status":      |                |               |
 | "guests":      |                |               |
 | "created_on":  |                |               |
 | "finished_on": |                |               |
-| "\_id":        |                |               |
+| "deadline":    |                |               |
+| "\_id":        | "projectId":   |               |
 
 
 ## Route Map

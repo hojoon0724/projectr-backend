@@ -1,0 +1,27 @@
+[
+  {
+    "username": "alice",
+    "password": "apple",
+    "created_on": "2024-02-18T08:30:00.000Z"
+  },
+  {
+    "username": "bob",
+    "password": "banana",
+    "created_on": "2024-02-19T12:45:00.000Z"
+  },
+  {
+    "username": "marie",
+    "password": "pear",
+    "created_on": "2024-02-20T16:10:00.000Z"
+  },
+  {
+    "username": "mike",
+    "password": "grape",
+    "created_on": "2024-02-18T21:20:00.000Z"
+  },
+  {
+    "username": "emily",
+    "password": "orange",
+    "created_on": "2024-02-19T09:05:00.000Z"
+  }
+]
