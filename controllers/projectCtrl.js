@@ -1,4 +1,3 @@
-
 // -----------------------------------------------------
 // Dependencies
 // -----------------------------------------------------
@@ -7,69 +6,58 @@ const Project = require('../models/Project')
 const router = express.Router()
 
 // GET all projects
-router.get('/projects', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const projects = await Project.find();
-    res.json(projects);
+    const projects = await Project.find()
+    res.json(projects)
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: err.message })
   }
-});
+})
 
 // POST create a new project
-router.post('/projects', async (req, res) => {
-  const project = new Project({
-    name: req.body.name,
-    owner: req.body.owner,
-    status: req.body.status,
-    guests: req.body.guests,
-    finished_on: req.body.finished_on,
-    tasks: req.body.tasks
-  });
+router.post('/', async (req, res) => {
+  console.log(req.body)
 
   try {
-    const newProject = await project.save();
-    res.status(201).json(newProject);
+    res.json(await Project.create(req.body))
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    res.status(400).json(err)
   }
-});
+})
 
 // PUT update a project
-router.put('/projects/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
-    const project = await Project.findById(req.params.id);
+    const project = await Project.findByIdAndUpdate(req.params.id)
     if (project) {
-      project.name = req.body.name || project.name;
-      project.owner = req.body.owner || project.owner;
-      project.status = req.body.status || project.status;
-      project.guests = req.body.guests || project.guests;
-      project.finished_on = req.body.finished_on || project.finished_on;
-      project.tasks = req.body.tasks || project.tasks;
+      project.project = req.body.project || project.project
+      project.username = req.body.username || project.username
+      project.status = req.body.status || project.status
+      project.guests = req.body.guests || project.guests
+      project.deadline = req.body.deadline || project.deadline
+      project.finished_on = req.body.finished_on || project.finished_on
 
-      const updatedProject = await project.save();
-      res.json(updatedProject);
+      const updatedProject = await project.save()
+      res.json(updatedProject)
     } else {
-      res.status(404).json({ message: 'Project not found' });
+      res.status(404).json({ message: 'Project not found' })
     }
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    res.status(400).json({ message: err.message })
   }
-});
+})
 
 // DELETE a project
-router.delete('/projects/:id', async (req, res) => {
-  try {
-    const project = await Project.findById(req.params.id);
-    if (project) {
-      await project.remove();
-      res.json({ message: 'Project deleted' });
-    } else {
-      res.status(404).json({ message: 'Project not found' });
-    }
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
 
-module.exports = router;
+router.delete('/:id', async (req, res) => {
+  console.log(req.params.id)
+  try {
+    await Project.findByIdAndDelete(req.params.id)
+    res.json({ message: 'Project deleted' })
+  } catch (err) {
+    res.status(500).json({ message: err.message })
+  }
+})
+
+module.exports = router
