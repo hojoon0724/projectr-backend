@@ -16,8 +16,8 @@ const cors = require('cors')
 // const seedTask = require('./dummyData/dummyResTask.json')
 // const seedUser = require('./dummyData/dummyResUser.json')
 // const Project = require('./models/Project')
-// const Task = require('./models/Task')
-// const User = require('./models/User')
+const Task = require('./models/Task')
+const User = require('./models/User')
 
 // -----------------------------------------------------
 // Application Object
@@ -47,9 +47,9 @@ app.use(
 // -----------------------------------------------------
 // Routes INDUCESS
 // -----------------------------------------------------
-app.use('/projects', projectCtrl)
 app.use('/projects/tasks', taskCtrl)
-// app.use('/user', userCtrl)
+app.use('/projects', projectCtrl)
+app.use('/user', userCtrl)
 
 // test seed routes
 // app.get('/projects/seed', async (req, res) => {
@@ -96,9 +96,9 @@ app.use('/projects/tasks', taskCtrl)
 //   }
 // })
 
-// app.get('/projects/tasks', async (req, res) => {
+// app.get('/projects/:id', async (req, res) => {
 //   try {
-//     res.json(await Task.find({ project: 'Database Restructure' }))
+//     res.json(await Task.find({ projectId: req.params.id }))
 //   } catch (err) {
 //     res.status(400).json(err)
 //   }
