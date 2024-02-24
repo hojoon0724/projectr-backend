@@ -1,7 +1,10 @@
-// routes/projects
-const express = require('express');
-const router = express.Router();
-const Project = require('../models/Project');
+
+// -----------------------------------------------------
+// Dependencies
+// -----------------------------------------------------
+const express = require('express')
+const Project = require('../models/Project')
+const router = express.Router()
 
 // GET all projects
 router.get('/projects', async (req, res) => {
