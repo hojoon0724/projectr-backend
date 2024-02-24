@@ -16,8 +16,8 @@ const cors = require('cors')
 // const seedTask = require('./dummyData/dummyResTask.json')
 // const seedUser = require('./dummyData/dummyResUser.json')
 // const Project = require('./models/Project')
-const Task = require('./models/Task')
-const User = require('./models/User')
+// const Task = require('./models/Task')
+// const User = require('./models/User')
 
 // -----------------------------------------------------
 // Application Object
