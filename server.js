@@ -7,6 +7,8 @@ const morgan = require('morgan')
 const session = require('express-session')
 const projectCtrl = require('./controllers/projectCtrl')
 const userCtrl = require('./controllers/userCtrl')
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // -----------------------------------------------------
 // Application Object
@@ -21,6 +23,7 @@ const MongoStore = require('connect-mongo')
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
+app.use(cors());
 
 app.use(
   session({
@@ -37,6 +40,10 @@ app.use(
 // -----------------------------------------------------
 app.use('/projects', projectCtrl)
 app.use('/user', userCtrl)
+
+// Require and use the routes
+app.use('/api/projects', require('./routes/projects'));
+app.use('/api/tasks', require('./routes/tasks'));
 
 // -----------------------------------------------------
 // GET requests
