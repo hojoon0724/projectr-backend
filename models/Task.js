@@ -12,7 +12,7 @@ const taskSchema = new Schema({
   priority: { type: Number },
   assigned_to: { type: String },
   department: { type: String },
-  created_on: { type: Date },
+  created_on: { type: Date, value: Date.now() },
   finished_on: { type: Date }
 })
 
