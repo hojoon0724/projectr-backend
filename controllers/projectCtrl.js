@@ -3,6 +3,7 @@
 // -----------------------------------------------------
 const express = require('express')
 const Project = require('../models/Project')
+const Task = require('../models/Task')
 const router = express.Router()
 
 // GET all projects
@@ -10,6 +11,16 @@ router.get('/', async (req, res) => {
   try {
     const projects = await Project.find()
     res.json(projects)
+  } catch (err) {
+    res.status(500).json({ message: err.message })
+  }
+})
+
+router.get('/:id', async (req, res) => {
+  console.dir(req.params.projectId)
+  try {
+    const tasks = await Task.find({ projectId: req.params.id })
+    res.json(tasks)
   } catch (err) {
     res.status(500).json({ message: err.message })
   }
