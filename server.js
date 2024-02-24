@@ -7,6 +7,8 @@ const morgan = require('morgan')
 const session = require('express-session')
 const projectCtrl = require('./controllers/projectCtrl')
 const userCtrl = require('./controllers/userCtrl')
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // test data
 const seedProject = require('./dummyData/dummyResProject.json')
@@ -29,6 +31,7 @@ const MongoStore = require('connect-mongo')
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
+app.use(cors());
 
 app.use(
   session({
@@ -100,6 +103,10 @@ app.get('/projects/tasks', async (req, res) => {
 })
 
 // --------
+
+// Require and use the routes
+app.use('/api/projects', require('./routes/projects'));
+app.use('/api/tasks', require('./routes/tasks'));
 
 // -----------------------------------------------------
 // GET requests
