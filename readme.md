@@ -53,20 +53,6 @@ The project roadmap is set in stages where we begin as a simple to-do list and g
 | PUT         | /projects/tasks/:id | Update a task        |
 | DELETE      | /projects/tasks/:id | Delete a task        |
 
-## Route Map
-
-| HTTP Method | Endpoint | Description |
-|------------|----------|-------------|
-| GET | /projects | Get all projects|
-| POST | /projects | Create a new project|
-| PUT | /projects/:id| Update a project|
-| DELETE | /projects/:id | Delete a project |
-| GET | /tasks | Get all tasks|
-| POST | /tasks | Create a new task|
-| PUT | /tasks/:id| Update a task|
-| DELETE | /tasks/:id | Delete a task|
-
-
 /user/signin<br>
 /user/signup<br>
 <br>
