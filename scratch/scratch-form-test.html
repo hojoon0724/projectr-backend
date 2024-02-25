@@ -1,0 +1,24 @@
+<form id="myForm">
+  <label for="priority">Priority</label>
+
+  <input type="radio" value="1" />High <input type="radio" value="2" />Medium <input type="radio" value="3" />Low
+  <input type="submit" />
+</form>
+
+<script>
+  document.getElementById('myForm').addEventListener('submit', function (event) {
+    event.preventDefault() // Prevent the default form submission
+
+    // Get form data
+    const formData = new FormData(event.target)
+
+    // Convert form data to JSON
+    const formDataObject = {}
+    formData.forEach((value, key) => {
+      formDataObject[key] = value
+    })
+
+    // Log JSON data to console
+    console.log(JSON.stringify(formDataObject, null, 2))
+  })
+</script>

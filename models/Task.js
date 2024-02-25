@@ -3,13 +3,13 @@ const { Schema, model } = mongoose
 
 const taskSchema = new Schema({
   project: { type: String, required: true },
-  projectId: { type: String, requied: true },
-  username: { type: String, required: true },
+  projectId: { type: String, required: true },
+  username: { type: String },
   task: { type: String },
   status: { type: String },
   category: { type: String },
   guests: [{ type: String }],
-  priority: { type: Number },
+  priority: { type: String },
   assigned_to: { type: String },
   department: { type: String },
   created_on: { type: Date, value: Date.now() },
