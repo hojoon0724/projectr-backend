@@ -33,25 +33,6 @@ router.post('/', async (req, res) => {
   }
 })
 
-// router.post('/', async (req, res) => {
-//   const task = new Task({
-//     name: req.body.name,
-//     status: req.body.status,
-//     category: req.body.category,
-//     guests: req.body.guests,
-//     priority: req.body.priority,
-//     assigned_to: req.body.assigned_to,
-//     department: req.body.department
-//   })
-
-//   try {
-//     const newTask = await task.save()
-//     res.status(201).json(newTask)
-//   } catch (err) {
-//     res.status(400).json({ message: err.message })
-//   }
-// })
-
 // PUT update a task
 router.put('/:id', async (req, res) => {
   try {
