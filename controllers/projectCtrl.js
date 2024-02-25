@@ -28,19 +28,11 @@ router.get('/:id', async (req, res) => {
 
 // POST create a new project
 router.post('/', async (req, res) => {
-  const project = new Project({
-    project: req.body.project,
-    username: req.body.username,
-    status: req.body.status,
-    guests: req.body.guests,
-    finished_on: req.body.finished_on
-  })
-
   try {
-    const newProject = await project.save()
-    res.status(201).json(newProject)
+    res.json(await Project.create(req.body))
+    console.log(req.body)
   } catch (err) {
-    res.status(400).json({ message: err.message })
+    res.status(400).json(err)
   }
 })
 

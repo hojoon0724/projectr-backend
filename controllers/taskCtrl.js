@@ -42,28 +42,6 @@ router.put('/:id', async (req, res) => {
   }
 })
 
-// router.put('/:id', async (req, res) => {
-//   try {
-//     const task = await Task.findById(req.params.id)
-//     if (task) {
-//       task.name = req.body.name || task.name
-//       task.status = req.body.status || task.status
-//       task.category = req.body.category || task.category
-//       task.guests = req.body.guests || task.guests
-//       task.priority = req.body.priority || task.priority
-//       task.assigned_to = req.body.assigned_to || task.assigned_to
-//       task.department = req.body.department || task.department
-
-//       const updatedTask = await task.save()
-//       res.json(updatedTask)
-//     } else {
-//       res.status(404).json({ message: 'Task not found' })
-//     }
-//   } catch (err) {
-//     res.status(400).json({ message: err.message })
-//   }
-// })
-
 // DELETE a task
 router.delete('/:id', async (req, res) => {
   try {
