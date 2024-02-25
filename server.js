@@ -11,7 +11,7 @@ const taskCtrl = require('./controllers/taskCtrl')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-// test data
+// // test data
 // const seedProject = require('./dummyData/dummyResProject.json')
 // const seedTask = require('./dummyData/dummyResTask.json')
 // const seedUser = require('./dummyData/dummyResUser.json')
