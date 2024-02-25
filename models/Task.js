@@ -3,7 +3,7 @@ const { Schema, model } = mongoose
 
 const taskSchema = new Schema({
   project: { type: String, required: true },
-  projectId: { type: String, requied: true },
+  projectId: { type: String, required: true },
   username: { type: String, required: true },
   task: { type: String },
   status: { type: String },
