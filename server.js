@@ -1,128 +1,23 @@
-// -----------------------------------------------------
-// Dependencies
-// -----------------------------------------------------
-require('dotenv').config()
-const express = require('express')
+// server.js
+
+const express = require('express');
+const mongoose = require('mongoose');
 const morgan = require('morgan')
-const session = require('express-session')
-const projectCtrl = require('./controllers/projectCtrl')
-const userCtrl = require('./controllers/userCtrl')
-const taskCtrl = require('./controllers/taskCtrl')
-const bodyParser = require('body-parser')
-const cors = require('cors')
+const cors = require('cors');
+const projectsRouter = require('./controllers/projectCtrl');
+const tasksRouter = require('./controllers/taskCtrl');
 
-// // test data
-// const seedProject = require('./dummyData/dummyResProject.json')
-// const seedTask = require('./dummyData/dummyResTask.json')
-// const seedUser = require('./dummyData/dummyResUser.json')
-// const Project = require('./models/Project')
-// const Task = require('./models/Task')
-// const User = require('./models/User')
+const app = express();
 
-// -----------------------------------------------------
-// Application Object
-// -----------------------------------------------------
-const app = express()
-const { PORT = 3013 } = process.env
-const MongoStore = require('connect-mongo')
+app.use(cors());
+app.use(express.json());
+app.use(morgan('dev'));
 
-// -----------------------------------------------------
-// Middleware
-// -----------------------------------------------------
-app.use(morgan('dev'))
-app.use(express.urlencoded({ extended: true }))
-app.use(express.static('public'))
-app.use(cors())
-app.use(express.json())
-app.use(
-  session({
-    secret: process.env.SECRET,
-    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-    saveUninitialized: true,
-    resave: false
-    // username: req.session.username,
-  })
-)
+mongoose.connect('mongodb+srv://izzy-2023:islam1988@cluster0.osvhfet.mongodb.net/projectbackend?retryWrites=true&w=majority');
+const db = mongoose.connection;
+db.once('open', () => console.log('Connected to MongoDB'));
 
-// -----------------------------------------------------
-// Routes INDUCESS
-// -----------------------------------------------------
-app.use('/projects/tasks', taskCtrl)
-app.use('/projects', projectCtrl)
-app.use('/user', userCtrl)
+app.use('/projects', projectsRouter);
+app.use('/tasks', tasksRouter);
 
-// test seed routes
-// app.get('/projects/seed', async (req, res) => {
-//   try {
-//     const dummyData = seedProject
-//     await Project.deleteMany({})
-//     const projects = await Project.create(dummyData)
-//     res.json(projects)
-//   } catch (error) {
-//     console.log(error.message)
-//     res.send('there was an error yo')
-//   }
-// })
-
-// app.get('/users/seed', async (req, res) => {
-//   try {
-//     const dummyData = seedUser
-//     await User.deleteMany({})
-//     const users = await User.create(dummyData)
-//     res.json(users)
-//   } catch (error) {
-//     console.log(error.message)
-//     res.send('there was an error yo')
-//   }
-// })
-
-// app.get('/projects/tasks/seed', async (req, res) => {
-//   try {
-//     const dummyData = seedTask
-//     await Task.deleteMany({})
-//     const tasks = await Task.create(dummyData)
-//     res.json(tasks)
-//   } catch (error) {
-//     console.log(error.message)
-//     res.send('there was an error yo')
-//   }
-// })
-
-// app.get('/projects', async (req, res) => {
-//   try {
-//     res.json(await Project.find({}))
-//   } catch (err) {
-//     res.status(400).json(err)
-//   }
-// })
-
-// app.get('/projects/:id', async (req, res) => {
-//   try {
-//     res.json(await Task.find({ projectId: req.params.id }))
-//   } catch (err) {
-//     res.status(400).json(err)
-//   }
-// })
-
-// -----------------------------------------------------
-// GET requests
-// -----------------------------------------------------
-app.get(
-  '/',
-  (req, res) => {
-    // const username = req.session.username
-    // if (req.session.loggedIn) {
-    // res.redirect('/projects')
-    // } else {
-    res.send('not logged in, but ok')
-    // res.render('landing.ejs', { username })
-  }
-  // }
-)
-
-// -----------------------------------------------------
-// Listener
-// -----------------------------------------------------
-app.listen(PORT, () => {
-  console.log(`listening in port ${PORT}`)
-})
+app.listen(5000, () => console.log('Server running on port 5000'));
