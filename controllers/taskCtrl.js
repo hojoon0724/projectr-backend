@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
 // PUT update a task
 router.put('/:id', async (req, res) => {
   try {
-    res.json(await People.findByIdAndUpdate(req.params.id, req.body))
+    res.json(await Task.findByIdAndUpdate(req.params.id, req.body))
   } catch (err) {
     res.status(400).json(err)
   }
